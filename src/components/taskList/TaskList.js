@@ -31,10 +31,16 @@ export const TaskList = () => {
         </div>
       </div>
       {displayList ? (
+
+          
         <ul className="task-list mt-2">
+        
+
           {dataArray.map((item, index) => (
               <SingleTask key={index} item={item} />
           ))}
+
+
         </ul>
       ) : null}
     </>

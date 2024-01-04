@@ -1,0 +1,25 @@
+.single-task{
+  width: 100%;
+  background-color: #ddd5cd;
+}
+.single-task .single-task-wrapper{
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.single-task .circle-icon-wrapper{
+  height: 25px;
+  width: 25px;
+}
+.single-task .dot-icon-wrapper{
+  height: 25px;
+  width: 25px;
+}
+
+
+.single-task .left{
+  display: flex;
+  align-items: center;
+}
