@@ -1,0 +1,13 @@
+.hero-banner{
+    background-image: url("../../../public/images/image.webp");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    aspect-ratio: 6/3;
+    background-size: cover;
+    display: flex;
+    padding-top: 120px;
+    background-color: rgba(0,0,0,0.3);
+    background-blend-mode: multiply;
+ }

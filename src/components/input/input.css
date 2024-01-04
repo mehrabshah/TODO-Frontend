@@ -1,11 +1,14 @@
 .form-control {
-    padding: 0.6rem 0.75rem;
+    padding: 1rem 0.75rem;
     border: none;
-
 }
 .form-control:focus {
     box-shadow: none;
 }
 input{
     border: none;
+}
+input::placeholder {
+  
+  color: #808793 !important; 
 }
