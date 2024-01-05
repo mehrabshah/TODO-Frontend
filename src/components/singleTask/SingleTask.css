@@ -16,10 +16,27 @@
 .single-task .dot-icon-wrapper{
   height: 25px;
   width: 25px;
+  cursor: pointer;
 }
 
 
 .single-task .left{
   display: flex;
   align-items: center;
+}
+
+.task-detail .btn-delete{
+  width: 100% ;
+  padding:7px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fecaca;
+  color: #f36868;
+  font-weight: 400;
+
+}
+
+.task-detail .task-detail-wrapper{
+  padding: 10px;
+  list-style: none;
 }

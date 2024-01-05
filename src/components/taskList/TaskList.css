@@ -21,7 +21,7 @@
 
 
 }
-.select .list-icon-wrapper{
+.select .select-icon-wrapper{
   height: 25px;
   width: 25px;
 }
@@ -36,7 +36,7 @@
 }
 
 .task-list{
-  height: 25vh;
+  height: 30vh;
   width: 100%;
   background-color: #ece9e4;
   border-radius: 7px;
