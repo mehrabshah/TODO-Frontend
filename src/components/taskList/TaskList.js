@@ -7,25 +7,36 @@ import taskService from "./../../services/TODO";
 
 export const TaskList = () => {
   const [tasks, setTasks] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const tasksData = await taskService.fetchTasks();
-        setTasks(tasksData);
-      } catch (error) {
-        console.error("Error fetching tasks:", error);
-      }
-    };
+  const [displayList, setDisplayList] = useState(false);
 
+  useEffect(() => {
     fetchData();
   }, []);
 
-  
-  const [displayList, setDisplayList] = useState(false);
+  const fetchData = async () => {
+    try {
+      const tasksData = await taskService.fetchTasks();
+      setTasks(tasksData);
+    } catch (error) {
+      console.error("Error fetching tasks:", error);
+    }
+  };
+
   const onChevron = () => {
     setDisplayList((prev) => !prev);
   };
-  const deleteTask = () => {};
+  const deleteTask = async (id) => {
+    try {
+      await taskService.deleteTask(id);
+      fetchData();
+      
+    } catch (error) {
+      
+      console.error('Error deleting task:', error);
+    }  
+
+
+  };
 
   return (
     <>

@@ -9,7 +9,21 @@ const taskService = {
     } catch (error) {
       console.error("Error fetching tasks:", error);
       throw error;
+
     }
   },
+  deleteTask: async (taskId) => {
+    try {
+      console.log(taskId)
+
+        
+      const response = await axios.delete(`${baseURI}/task/deleteTask?id=${taskId}`); 
+      return response.data;
+    } catch (error) {
+      console.error('Error deleting task:', error);
+      throw error;
+    }
+  },
+  
 };
 export default taskService;

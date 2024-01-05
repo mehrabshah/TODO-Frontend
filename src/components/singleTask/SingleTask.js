@@ -7,6 +7,7 @@ export const SingleTask = ({ item,onDelete }) => {
   const onDotIcon=()=>{
      setDisplayTask((prev)=>!prev)
   }
+
   return (
     <>
       <div className="single-task">
@@ -31,7 +32,7 @@ export const SingleTask = ({ item,onDelete }) => {
           <li>
             Created At:<span>{item.date}</span>
           </li>
-          <button className="btn-delete mt-2" onClick={onDelete}>Delete</button>
+          <button className="btn-delete mt-2" onClick={() => onDelete(item._id)}>Delete</button>
         </div>
       </div>:null}
     </>
