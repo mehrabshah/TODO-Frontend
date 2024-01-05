@@ -29,13 +29,9 @@ export const TaskList = () => {
     try {
       await taskService.deleteTask(id);
       fetchData();
-      
     } catch (error) {
-      
-      console.error('Error deleting task:', error);
-    }  
-
-
+      console.error("Error deleting task:", error);
+    }
   };
 
   return (

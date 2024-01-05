@@ -24,6 +24,15 @@ const taskService = {
       throw error;
     }
   },
+  addTask: async (newTask) => {
+    try {
+      const response = await axios.post(`${baseURI}/task/createTask`, newTask);
+      return response.data;
+    } catch (error) {
+      console.error('Error adding task:', error);
+      throw error;
+    }
+  },
   
 };
 export default taskService;
