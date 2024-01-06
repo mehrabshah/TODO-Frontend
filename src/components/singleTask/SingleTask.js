@@ -4,11 +4,8 @@ import CheckCircleIcon from "../../icons/CheckCircleIcon";
 import DotIcon from "../../icons/DotIcon";
 
 export const SingleTask = ({ item, deleteTask, updateTask }) => {
-
   const check=item.status==="Pending"? false : true;
-
   const [displayTask, setDisplayTask] = useState(false);
-
   const [isChecked, setIsChecked] = useState(check);
 
   const onDotIcon = () => {

@@ -104,17 +104,22 @@ export const Todo = () => {
       </div>
       {/* Displaying Tasks */}
       {displayList ? (
-        <ul className="task-list mt-2 ps-0 pb-3">
-          {tasks.map((item, index) => (
-            <SingleTask
-              key={index}
-              item={item}
-              deleteTask={deleteTask}
-              updateTask={updateTask}
-            />
-          ))}
-        </ul>
-      ) : null}
+  <ul className="task-list mt-2 ps-0 pb-3">
+    {tasks.length > 0 ? (
+      tasks.map((item, index) => (
+        <SingleTask
+          key={index}
+          item={item}
+          deleteTask={deleteTask}
+          updateTask={updateTask}
+        />
+      ))
+    ) : (
+      <li className="no-task">No tasks today</li>
+    )}
+  </ul>
+) : null}
+
     </>
   );
 };
