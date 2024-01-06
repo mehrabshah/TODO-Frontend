@@ -1,7 +1,10 @@
 .single-task{
   width: 100%;
   background-color: #ddd5cd;
+  border-bottom: 1.5px solid #c4b6a2 ;
 }
+
+
 .single-task .single-task-wrapper{
   padding: 15px;
   display: flex;
@@ -40,6 +43,12 @@
   padding: 10px;
   list-style: none;
 }
+.task-detail .heading{
+
+  font-weight: 600;
+}
+
+
 
 
 .form-check-input:focus {

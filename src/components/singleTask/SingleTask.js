@@ -47,15 +47,16 @@ export const SingleTask = ({ item, deleteTask, updateTask }) => {
           </div>
         </div>
       </div>
+      {/* Task Details */}
       {displayTask ? (
         <div className="task-detail text-start">
           <div className="task-detail-wrapper">
             {" "}
             <li className="">
-              Completed:<span>{item.status}</span>
+            <span className="heading me-2"> Completed:</span>{item.status}
             </li>
             <li>
-              Created At:<span>{item.date}</span>
+            <span className="heading me-2">Created At:</span>{item.date}
             </li>
             <button
               className="btn-delete mt-2"

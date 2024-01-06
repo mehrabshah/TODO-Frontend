@@ -1,13 +1,14 @@
 // AddTask.js
 import React, { useEffect, useState } from "react";
 import "./Todo.css";
-
 import { getCurrentDateTime } from "../../utils/Date";
 import taskService from "../../services/TODO";
 import { SingleTask } from "../singleTask/SingleTask";
 import ListIcon from "../../icons/ListIcon";
 import ChevronIcon from "../../icons/ChevronIcon";
 import { AddTask } from "../addTask/AddTask";
+import { formatDateTime } from '../../utils/DateConversion';
+
 export const Todo = () => {
   const [tasks, setTasks] = useState([]);
   const [displayList, setDisplayList] = useState(false);
@@ -22,6 +23,7 @@ export const Todo = () => {
   });
 
   const handleInputChange = (event) => {
+    
     const { name, value } = event.target;
 
     setTaskValue((prevTaskValue) => ({
@@ -35,6 +37,7 @@ export const Todo = () => {
 
   const addTask = async () => {
     try {
+      
       const currentDateTime = getCurrentDateTime();
       const newTask = { ...taskValue, date: currentDateTime };
       await taskService.addTask(newTask);
@@ -46,7 +49,21 @@ export const Todo = () => {
   const fetchTask = async () => {
     try {
       const tasksData = await taskService.fetchTasks();
-      setTasks(tasksData);
+      
+
+     
+      const updatedTasksData = tasksData.map((item) => {
+        const formattedDate = formatDateTime(item.date);
+        return {
+          ...item,
+          date: formattedDate,
+        };
+      })
+      
+      setTasks(updatedTasksData);
+
+      console.log(tasksData)
+      
     } catch (error) {
       console.error("Error fetching tasks:", error);
     }
@@ -72,6 +89,7 @@ export const Todo = () => {
   return (
     <>
       {" "}
+      {/* Add Tasks */}
       <AddTask
         onChange={handleInputChange}
         value={taskValue.name}
@@ -90,6 +108,7 @@ export const Todo = () => {
           </div>
         </div>
       </div>
+      {/* Displaying Tasks */}
       {displayList ? (
         <ul className="task-list mt-2 ps-0 pb-3">
           {tasks.map((item, index) => (
