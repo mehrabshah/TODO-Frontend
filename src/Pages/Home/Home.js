@@ -16,7 +16,6 @@ export const Home = () => {
               <div className="banner-content text-center">
                 <Avatar />
                 <AddTask  />
-                
               </div>
             </div>
           </div>
