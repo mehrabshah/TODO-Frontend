@@ -20,6 +20,18 @@ export const AddTask = () => {
     status: "Not Completed",
     date: "",
   });
+   
+  const [updateTaskValue,setUpdateTaskValue]=useState(
+        {
+
+          status: "Not Completed",
+        }
+
+
+  )
+
+
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
 
@@ -60,16 +72,28 @@ export const AddTask = () => {
   };
 
   const updateTask=async(id,data)=>{
-    try{
-
-
-    }
-    catch(error){
-      console.error("Error deleting task:", error);
-    }
+    try {
+      const status = data ? 'Completed' : 'Not Completed';
+  
       
+     
+  
+      setUpdateTaskValue((prevTaskValue) => ({
+        ...prevTaskValue,
+        status: status,
+      }));
+
+       
+    
+      await taskService.updateTaskStatus(id, updateTaskValue);
+      fetchTask();
+    } catch (error) {
+      console.error('Error updating task:', error);
+    }
 
   }
+
+
   return (
     <>
       {" "}
@@ -103,7 +127,7 @@ export const AddTask = () => {
       {displayList ? (
         <ul className="task-list mt-2 ps-0 pb-3">
           {tasks.map((item, index) => (
-            <SingleTask key={index} item={item} onDelete={deleteTask} />
+            <SingleTask key={index} item={item} deleteTask={deleteTask}   updateTask={updateTask} />
           ))}
         </ul>
       ) : null}

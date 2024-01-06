@@ -1,26 +1,25 @@
-import axios from "axios"
-const baseURI = 'http://localhost:3000'
+import axios from "axios";
+const baseURI = "http://localhost:3000";
 const taskService = {
   fetchTasks: async () => {
     try {
-       const response= await axios.get(`${baseURI}/task/getAllTask`)
-       return response.data;
-
+      const response = await axios.get(`${baseURI}/task/getAllTask`);
+      return response.data;
     } catch (error) {
       console.error("Error fetching tasks:", error);
       throw error;
-
     }
   },
   deleteTask: async (taskId) => {
     try {
-      console.log(taskId)
+      console.log(taskId);
 
-        
-      const response = await axios.delete(`${baseURI}/task/deleteTask?id=${taskId}`); 
+      const response = await axios.delete(
+        `${baseURI}/task/deleteTask?id=${taskId}`
+      );
       return response.data;
     } catch (error) {
-      console.error('Error deleting task:', error);
+      console.error("Error deleting task:", error);
       throw error;
     }
   },
@@ -29,10 +28,17 @@ const taskService = {
       const response = await axios.post(`${baseURI}/task/createTask`, newTask);
       return response.data;
     } catch (error) {
-      console.error('Error adding task:', error);
+      console.error("Error adding task:", error);
       throw error;
     }
   },
-  
+  updateTaskStatus: async (taskId, updateTask) => {
+    try {
+      await axios.patch(`${baseURI}/task/updateTask?id=${taskId}`, updateTask);
+    } catch (error) {
+      console.error("Error updating task status:", error);
+      throw error;
+    }
+  },
 };
 export default taskService;
