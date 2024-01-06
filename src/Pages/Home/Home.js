@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import "./Home.css";
 import Avatar from "../../components/Avatar/Avatar";
-import { AddTask } from "../../components/addTask/AddTask";
+
 
 import { getCurrentDateTime } from "../../utils/Date";
+import { Todo } from "../../components/Todo/Todo";
 
 export const Home = () => {
  
@@ -15,7 +16,7 @@ export const Home = () => {
             <div className="col-lg-4 col-md-10  m-auto">
               <div className="banner-content text-center">
                 <Avatar />
-                <AddTask  />
+                <Todo/>
               </div>
             </div>
           </div>

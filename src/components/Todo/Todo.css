@@ -1,0 +1,80 @@
+.add-task{
+    padding: 30px 0px 20px 0px;
+}
+.add-task  .input-group{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    padding:0px 10px 0px 0px;
+    background-color: white;
+    border-radius: 5px;
+}
+.add-task .input-icon-wrapper{
+    height: 25px;
+    width: 25px;
+    background-color: #a99579;
+    cursor: pointer;
+}
+
+
+.select{
+    background-color: #a99579;
+    width: 100%;
+    border: 2px solid #a9a196;
+    border-radius: 5px;  
+  
+  }
+  .select .select-wrapper{
+       padding: 15px;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+  }
+  
+  .select .left{
+    
+    display: flex;
+    align-items: center;
+  
+  
+  }
+  .select .select-icon-wrapper{
+    height: 25px;
+    width: 25px;
+  }
+  .select .chevron-wrapper{
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+  
+  }
+  .select .left-heading{
+    color: white;
+  }
+  
+  .task-list{
+    height: 30vh;
+    width: 100%;
+    background-color: #ece9e4;
+    border-radius: 7px;
+    overflow-y: auto;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #f8f8f8;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+  }
+  
+  
+
+
+
