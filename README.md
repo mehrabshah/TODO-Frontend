@@ -14,7 +14,6 @@ This is a simple to-do list application built with React.js. It allows users to 
 
 - **React.js**: A JavaScript library for building user interfaces.
 - **Create React App**: A tool to set up a new React project with zero build configuration.
-- **[Additional libraries used]**: List any additional libraries or tools you've used.
 
 ### Why React.js?
 
