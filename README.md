@@ -5,8 +5,6 @@ This is a simple to-do list application built with React.js. It allows users to 
 ## Table of Contents
 - [Technologies Used](#technologies-used)
 - [Setup](#setup)
-- [Project Structure](#project-structure)
-- [Code Functionality](#code-functionality)
 - [Contributing](#contributing)
 - [License](#license)
 
