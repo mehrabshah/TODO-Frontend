@@ -7,7 +7,7 @@ import { SingleTask } from "../singleTask/SingleTask";
 import ListIcon from "../../icons/ListIcon";
 import ChevronIcon from "../../icons/ChevronIcon";
 import { AddTask } from "../addTask/AddTask";
-import { formatDateTime } from '../../utils/DateConversion';
+import { formatDateTime } from "../../utils/DateConversion";
 
 export const Todo = () => {
   const [tasks, setTasks] = useState([]);
@@ -23,7 +23,6 @@ export const Todo = () => {
   });
 
   const handleInputChange = (event) => {
-    
     const { name, value } = event.target;
 
     setTaskValue((prevTaskValue) => ({
@@ -37,7 +36,6 @@ export const Todo = () => {
 
   const addTask = async () => {
     try {
-      
       const currentDateTime = getCurrentDateTime();
       const newTask = { ...taskValue, date: currentDateTime };
       await taskService.addTask(newTask);
@@ -49,21 +47,14 @@ export const Todo = () => {
   const fetchTask = async () => {
     try {
       const tasksData = await taskService.fetchTasks();
-      
-
-     
       const updatedTasksData = tasksData.map((item) => {
         const formattedDate = formatDateTime(item.date);
         return {
           ...item,
           date: formattedDate,
         };
-      })
-      
+      });
       setTasks(updatedTasksData);
-
-      console.log(tasksData)
-      
     } catch (error) {
       console.error("Error fetching tasks:", error);
     }
@@ -76,10 +67,13 @@ export const Todo = () => {
       console.error("Error deleting task:", error);
     }
   };
-
   const updateTask = async (id, data) => {
     try {
-      await taskService.updateTaskStatus(id, data);
+      const status = data ? "Pending" : "Completed";
+    
+       console.log(status);
+
+      await taskService.updateTaskStatus(id, { status });
       fetchTask();
     } catch (error) {
       console.error("Error updating task:", error);

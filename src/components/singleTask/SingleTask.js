@@ -4,22 +4,19 @@ import CheckCircleIcon from "../../icons/CheckCircleIcon";
 import DotIcon from "../../icons/DotIcon";
 
 export const SingleTask = ({ item, deleteTask, updateTask }) => {
+
+  const check=item.status==="Pending"? false : true;
+
   const [displayTask, setDisplayTask] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
-  const [updateValue, setUpdateValue] = useState({
-    status: "Pending",
-  });
+
+  const [isChecked, setIsChecked] = useState(check);
 
   const onDotIcon = () => {
     setDisplayTask((prev) => !prev);
   };
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
-    const status = event.target.checked ? "Completed" : " Pending";
-    setUpdateValue((prevTaskValue) => ({
-      ...prevTaskValue,
-      status: status,
-    }));
+   
   };
 
   return (
@@ -36,7 +33,7 @@ export const SingleTask = ({ item, deleteTask, updateTask }) => {
                 disabled=""
                 checked={isChecked}
                 onChange={handleCheckboxChange}
-                onClick={() => updateTask(item._id, updateValue)}
+                onClick={() => updateTask(item._id, isChecked)}
               />
             </div>
 
