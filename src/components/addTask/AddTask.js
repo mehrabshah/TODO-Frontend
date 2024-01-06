@@ -5,7 +5,6 @@ import { Input } from "../input/Input";
 import PlusIcon from "../../icons/PlusIcon";
 import { getCurrentDateTime } from "../../utils/Date";
 import taskService from "../../services/TODO";
-
 import { SingleTask } from "../singleTask/SingleTask";
 import ListIcon from "../../icons/ListIcon";
 import ChevronIcon from "../../icons/ChevronIcon";

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./SingleTask.css";
 import CheckCircleIcon from "../../icons/CheckCircleIcon";
 import DotIcon from "../../icons/DotIcon";
+import { Checkbox } from "../checkbox/Checkbox";
+
 export const SingleTask = ({ item,onDelete }) => {
   const [displayTask, setDisplayTask] = useState(false);
   const onDotIcon=()=>{
@@ -13,9 +15,9 @@ export const SingleTask = ({ item,onDelete }) => {
       <div className="single-task">
         <div className="single-task-wrapper">
           <div className="left">
-            <div className="circle-icon-wrapper">
-              <CheckCircleIcon />
-            </div>
+            
+             <Checkbox/>
+
             <span className="single-task-heading ms-2">{item.name}</span>
           </div>
           <div className="dot-icon-wrapper" onClick={onDotIcon}>
