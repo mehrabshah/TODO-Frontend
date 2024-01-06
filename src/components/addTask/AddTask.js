@@ -58,6 +58,18 @@ export const AddTask = () => {
       console.error("Error deleting task:", error);
     }
   };
+
+  const updateTask=async(id,data)=>{
+    try{
+
+
+    }
+    catch(error){
+      console.error("Error deleting task:", error);
+    }
+      
+
+  }
   return (
     <>
       {" "}

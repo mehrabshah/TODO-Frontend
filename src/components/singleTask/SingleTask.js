@@ -15,7 +15,7 @@ export const SingleTask = ({ item,onDelete }) => {
       <div className="single-task">
         <div className="single-task-wrapper">
           <div className="left">
-            
+              
              <Checkbox/>
 
             <span className="single-task-heading ms-2">{item.name}</span>
