@@ -5,8 +5,6 @@ This is a simple to-do list application built with React.js. It allows users to 
 ## Table of Contents
 - [Technologies Used](#technologies-used)
 - [Setup](#setup)
-- [Project Structure](#project-structure)
-- [Code Functionality](#code-functionality)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -44,14 +42,6 @@ Follow these steps to set up and run the application locally:
     ```
 
 4. Open your browser and go to `http://localhost:3000` to view the application.
-
-## Project Structure
-
-Explain the structure of your project, including important directories and files.
-
-## Code Functionality
-
-Describe how different parts of your code work. Highlight any key features or implementations.
 
 ## Contributing
 
