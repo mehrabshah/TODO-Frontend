@@ -45,9 +45,6 @@ Follow these steps to set up and run the application locally:
 
 4. Open your browser and go to `http://localhost:3000` to view the application.
 
-## Project Structure
-
-Explain the structure of your project, including important directories and files.
 
 ## License
 
